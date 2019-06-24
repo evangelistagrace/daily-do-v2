@@ -3,7 +3,9 @@ var countChecked = 0;
 var totalCheckbox = checkboxes.length;
 var progressPercentage = 0;
 var progressBar = document.querySelector('.progress-bar');
-
+document.querySelector('span.percentage').innerHTML = progressPercentage + '%';
+document.querySelector('span.completed').innerHTML = countChecked;
+document.querySelector('span.total').innerHTML = totalCheckbox;
 
 //Add/remove ticks to checkboxes on click
 checkboxes.forEach((checkbox) => {
@@ -26,13 +28,12 @@ checkboxes.forEach((checkbox) => {
       count = 0;
     } 
     progressPercentage = countChecked * (1/totalCheckbox) * 100;
-    // console.log(progressPercentage);
     progressBar.style.width = progressPercentage + '%';
     document.querySelector('span.percentage').innerHTML = progressPercentage + '%';
+    document.querySelector('span.completed').innerHTML = countChecked;
+    document.querySelector('span.total').innerHTML = totalCheckbox;
+
   });
 });
  
-
-// 
-// console.log(totalCheckbox);
 
