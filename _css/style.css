@@ -1,0 +1,182 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+/*navbar*/
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    width: 100%;
+}
+
+.navbar div{
+    flex: 1;
+}
+/*menu button*/
+
+.navbar div:nth-child(1){
+    font-size: 1.3em;
+    margin: 5px;
+}
+.navbar div:nth-child(2){
+    text-align: center;
+}
+
+
+.navbar a.navbar-brand{
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 1.7em;
+    color: rgb(79, 177, 137);
+    text-align: center;
+}
+
+form.search{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+form.search input{
+    width: 50%;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: center;
+    /* flex-wrap: wrap; */
+    margin: 20px 0;
+
+}
+
+/*progress bar*/
+.progress{
+    margin: 5% 0 2% 0;
+    width: 50%;
+    height: 50px;
+}
+
+p.progress-text{
+    text-align: center;
+}
+
+/*list*/
+.container-title{
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 1.3em;
+    color: rgb(79, 177, 137);
+    align-self: flex-start;
+}
+
+.container-title::after{
+    content: '';
+    width: 100%;
+    background: rgb(207, 207, 207);
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    border-radius: 50px;
+}
+
+.list-container{
+    width: 100%;
+    /* background: rgb(247, 247, 247); */
+    display: flex;
+    justify-content: center;
+}
+
+.list-container ul{
+    list-style: none;
+    width: 50%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.list-container ul li{
+    background: #f7f7f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: rgb(102, 184, 201);
+    display: flex;
+    justify-content: space-around;
+    transition: 0.2s box-shadow linear; 
+}
+
+.list-container li:hover{
+    box-shadow: 2px 2px 5px #eee;
+    transition: 0.2s box-shadow linear; 
+}
+
+.list-container li .task{
+    align-self: flex-start;
+    flex: 2;
+}
+
+.list-container li i{
+    margin: 5px 5px 5px 20px;
+    cursor: pointer;
+    transition: 0.1s text-shadow linear; 
+}
+
+.list-container li i:hover{
+    text-shadow: 2px 2px #ddd;
+    transition: 0.2s text-shadow linear; 
+}
+
+li .fa-edit{
+    color: rgb(79, 177, 137);
+}
+
+li .fa-trash-alt{
+    color: #FF7851;
+}
+
+.btn-add-task{
+    width: 90px;
+    height: 90px;
+    background-color: rgb(102, 184, 201);
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+    padding: 0;
+    border-radius: 50%;
+    line-height: 1.7em;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.1s box-shadow text-shadow linear; 
+}
+
+.btn-add-task:hover{
+    box-shadow: 3px 3px 3px #ccc;
+    text-shadow: 1px 1px  #ddd;
+    transition: 0.1s box-shadow text-shadow linear; 
+}
