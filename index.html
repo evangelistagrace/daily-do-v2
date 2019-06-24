@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-do List</title>
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Quicksand:400,500|Roboto&display=swap" rel="stylesheet"> 
+    <!--bootstrap-->
+    <link rel="stylesheet" href="_css/bootstrap.min.css">
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/a256fe27cf.js"></script>
+    <!--stylesheet-->
+    <link rel="stylesheet" href="_css/style.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="navbar-item"><div class="btn-menu"><i class="fas fa-bars"></i></div></div>
+        <div class="navbar-item"> <a href="/" class="navbar-brand">Daily-Do</a></div>
+        <div class="navbar-item">
+            <form class="search">
+                <input type="search" class="form-control mr-2" placeholder="Search">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+            
+       </div>
+        
+       
+        
+    </nav>
+
+    <div class="container">
+        <div class="btn-add-task">+</div>
+        <!--progress bar-->
+        <div class="row">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width:10%;">10%</div>
+            </div>
+            <p class="progress-text">1/4 completed</p>
+        </div>
+        
+        <!--To-do-->
+        <div id="to-do" class="row">
+            <div class="container-title">To-do</div>
+            <div class="list-container">
+                <ul>
+                    <li>
+                        <div class="task">One</div>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <div class="task">Two</div>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <div class="task">Three</div>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <!--Completed-->
+        <div id="completed" class="row">
+            <div class="container-title">Completed</div>
+            <div class="list-container">
+                <ul>
+                    <li>one</li>
+                    <li>two</li>
+                    <li>three</li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+    
+    <script src="_js/app.js"></script>
+</body>
+</html>
