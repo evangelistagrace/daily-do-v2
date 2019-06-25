@@ -131,8 +131,13 @@ p.progress-text{
     transition: 0.2s box-shadow linear; 
 }
 
+.list-container li.important{
+    border: 5px solid  rgba(253, 121, 84, .7);
+    border-radius: 5px;
+}
+
 .list-container li .task{
-    align-self: flex-start;
+    /* align-self: flex-start; */
     flex: 2;
     margin-left: 10px;
 }
@@ -194,6 +199,7 @@ li .fa-trash-alt{
 }
 
 .pseudo-checkbox{
+    display: inline-block;
     position: absolute;
     top: 15px;
     left: 10px;
@@ -213,4 +219,162 @@ li .fa-trash-alt{
     1px -1px 0 white,
     -1px 1px 0 white,
      1px 1px 0 white;
+}
+
+/*Pop-up box*/
+.pop-up{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, .7);
+}
+
+.pop-up-content{
+    width: 40%;
+    height: 40%;
+    background-color: #fff;
+    margin: 15% auto;
+}
+
+.pop-up-content p{
+     display: flex;
+     flex-direction: column;
+     align-content: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     width: 100%;
+}
+
+.pop-up-title{
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 1.4em;
+    color: rgb(79, 177, 137);
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-close > i{
+    float: right;
+    color:  #FF7851;
+    padding: 0;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: -7px 7px 0 0;
+    font-size: 1.2em;
+    z-index:9999;
+}
+
+.btn-close > i:hover{
+    text-shadow: 3px 3px #eee;
+    cursor: pointer;
+
+}
+
+.add-task{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.form-row{
+    width: 80%;
+    margin: 3% 0;
+}
+
+.form-row.inline{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.form-row.block{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.form-row input[name="task-name"]{
+    width: 80%;
+}
+
+.form-row input[name="task-dateline"]{
+    width: 65%;
+}
+
+.form-row .title{
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 1.1em;
+    color: rgb(79, 177, 137);
+    margin-bottom: 5px;
+}
+
+/*toggling switch*/
+.switch{
+    position: relative;
+    width: 60px;
+    height: 34px;
+    display: inline-block;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ccc;
+    border-radius: 36px;
+    cursor: pointer;
+}
+
+.slider:before{
+    position: absolute;
+    content: '';
+    background: #fff;
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider{
+    background-color: #6CC3D5;
+    transition: .4s;
+
+}
+
+input:checked + .slider:before{
+    transform: translateX(26px);
+}
+
+.dateline{
+    font-size: 0.9em;
+    color: #ccc;
+    font-style: italic;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+}
+
+.checkbox-inline{
+    display:inline;
+    white-space: nowrap;
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="_css/bootstrap.min.css">
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/a256fe27cf.js"></script>
+    <link rel="stylesheet" href="_css/fontawesome.min.css">
     <!--stylesheet-->
     <link rel="stylesheet" href="_css/style.css">
     
@@ -29,8 +30,38 @@
     </nav>
 
     <div class="container">
+        <!--pop-up box-->
+        <div class="pop-up">
+            <div class="pop-up-content">
+                <p>
+                    <div class="btn-close"><i class="fas fa-times"></i></div>    
+                    <div class="pop-up-title">Add a task</div>
+                    <form id="task-form" class="add-task" action="">
+                        <div class="form-row inline">
+                            <input id="task-name" name="task-name" class="form-control" type="text" placeholder="Enter a task...">
+                            <button id="add-task-btn" class="btn btn-info" type="submit" value="Add Task">Add</button>
+                        </div>
+                        <div class="form-row inline">
+                            <div class="form-row block"> 
+                                <div class="title">Dateline: </div>
+                                <input id="task-dateline" name="task-dateline" class="form-control" type="date">
+                            </div>
+                            <div class="form-row block">
+                                <div class="title">Set reminder: </div>
+                                <label class="switch">
+                                    <input id="task-reminder" name="task-reminder" type="checkbox">
+                                    <div class="slider"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </p>
+            </div>
+        </div>
+
         <!--add task button-->
         <div class="btn-add-task">+</div>
+
         <!--progress bar-->
         <div class="row">
             <div class="progress">
@@ -40,18 +71,20 @@
         </div>
         
         <!--To-do-->
-        <div id="to-do" class="row">
+        <div class="row">
             <div class="container-title">To-do</div>
             <div class="list-container">
-                <ul>
-                    <li>
-                            <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
+                <ul id="to-do">
+                    <li class="important">
+                        <input class="checkbox" type="checkbox">
+                        <div class="pseudo-checkbox"></div>
                         <div class="task">One</div>
+                        <span class="dateline">Due: 10/06/19</span>
                         <i class="fas fa-edit"></i>
                         <i class="fas fa-trash-alt"></i>
                     </li>
                     <li>
-                            <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
+                        <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
                         <div class="task">Two</div>
                         <i class="fas fa-edit"></i>
                         <i class="fas fa-trash-alt"></i>
@@ -67,10 +100,10 @@
         </div>
 
         <!--Completed-->
-        <div id="completed" class="row">
+        <div class="row">
             <div class="container-title">Completed</div>
             <div class="list-container">
-                <ul>
+                <ul id="completed">
                     <li>one</li>
                     <li>two</li>
                     <li>three</li>
