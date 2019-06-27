@@ -126,15 +126,12 @@ function editTaskPopUp(e){
   var form = document.getElementById('task-form');
   var formTitle =  document.querySelector('.pop-up-title');
   var saveBtn = document.getElementById('add-task-btn');
-
   e.target.parentNode.classList.add('current');
-
   var task = document.querySelector('.current');
-  console.log(task.className);
-
   var taskName = task.querySelector('.task');
   var taskDateline = task.querySelector('.dateline');
   var taskDatelineValue =  new Date(taskDateline.innerHTML.substr(5));
+  
 
   //form data
   var formName = document.getElementById('task-name');
@@ -145,9 +142,15 @@ function editTaskPopUp(e){
   saveBtn.innerHTML = 'Edit';
   form.removeEventListener('submit', addTask);
   form.addEventListener('submit', submitEditTask);
+  document.querySelector('.btn-close').removeEventListener('click', closePopUp);
+  document.querySelector('.btn-close').addEventListener('click', submitEditTask);
+
 
   formName.value = taskName.innerHTML;
   formDateline.valueAsDate = taskDatelineValue;
+  if(task.classList.contains('important')){
+    formReminder.checked = true;
+  };
 
   document.querySelector('.pop-up').style.display = 'block';
 
@@ -155,9 +158,23 @@ function editTaskPopUp(e){
     e.preventDefault();
     taskName.innerHTML = formName.value;
     taskDateline.innerHTML = 'Due: ' + formDateline.value;
+    if(formReminder.checked == true){
+      if(task.classList.contains('important')){
+        //do nothing
+      }else{
+        task.classList.add('important');
+      }
+    }else{
+      if(task.classList.contains('important')){
+        task.classList.remove('important');
+      }
+    }
     //reset form
     document.getElementById('task-form').reset(); 
     form.removeEventListener('submit', submitEditTask);
+    document.querySelector('.btn-close').removeEventListener('click', submitEditTask);
+  document.querySelector('.btn-close').addEventListener('click', closePopUp);
+
     task.classList.remove('current'); 
     closePopUp();
   }
