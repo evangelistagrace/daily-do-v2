@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="_css/bootstrap.min.css">
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/a256fe27cf.js"></script>
-    <link rel="stylesheet" href="_css/fontawesome.min.css">
     <!--stylesheet-->
     <link rel="stylesheet" href="_css/style.css">
     
 </head>
-<body>
+<body onload="updateProgress()">
     <!--navbar-->
     <nav class="navbar navbar-light bg-light">
         <div class="navbar-item"><div class="btn-menu"><i class="fas fa-bars"></i></div></div>
@@ -35,11 +34,11 @@
             <div class="pop-up-content">
                 <p>
                     <div class="btn-close"><i class="fas fa-times"></i></div>    
-                    <div class="pop-up-title">Add a task</div>
+                    <div class="pop-up-title">Add Task</div>
                     <form id="task-form" class="add-task" action="">
                         <div class="form-row inline">
                             <input id="task-name" name="task-name" class="form-control" type="text" placeholder="Enter a task...">
-                            <button id="add-task-btn" class="btn btn-info" type="submit" value="Add Task">Add</button>
+                            <button id="add-task-btn" class="btn btn-info" type="submit">Add</button>
                         </div>
                         <div class="form-row inline">
                             <div class="form-row block"> 
@@ -75,22 +74,25 @@
             <div class="container-title">To-do</div>
             <div class="list-container">
                 <ul id="to-do">
-                    <li class="important">
+                    <li class="list-item important">
                         <input class="checkbox" type="checkbox">
                         <div class="pseudo-checkbox"></div>
                         <div class="task">One</div>
+                        <span class="dateline" value="2019-06-30">Due: 2019-06-30</span>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </li>
+                    <li class="list-item">
+                        <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
+                        <div class="task">Two</div>
                         <span class="dateline">Due: 10/06/19</span>
                         <i class="fas fa-edit"></i>
                         <i class="fas fa-trash-alt"></i>
                     </li>
-                    <li>
+                    <li class="list-item">
                         <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
-                        <div class="task">Two</div>
-                        <i class="fas fa-edit"></i>
-                        <i class="fas fa-trash-alt"></i>
-                    </li>
-                    <li>
                         <div class="task">Three</div>
+                        <span class="dateline">Due: 10/06/19</span>
                         <i class="fas fa-edit"></i>
                         <i class="fas fa-trash-alt"></i>
                     </li>
